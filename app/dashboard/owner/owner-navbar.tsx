@@ -17,10 +17,10 @@ export default function AdminNavbar() {
         "
             >
                 {[
-                    { href: "/dashboard/admin/user-management", label: "User Management" },
-                    { href: "/dashboard/admin", label: "Trend Charts" },
-                    { href: "/dashboard/admin/facility-approval", label: "Facility Approval" },
-                    { href: "/dashboard/admin/facility-details", label: "Facility Details" },
+                    { href: "/dashboard/owner", label: "Summary" },
+                    { href: "/dashboard/owner/trend-charts", label: "Trend Charts" },
+                    { href: "/dashboard/owner/facility-management", label: "Facility management" },
+                    { href: "/dashboard/owner/booking-overview", label: "Overview" },
                 ].map(({ href, label }) => (
                     <li key={href} className="flex">
                         <Button className="w-full whitespace-normal break-words text-center px-3 py-2 text-sm sm:text-base">

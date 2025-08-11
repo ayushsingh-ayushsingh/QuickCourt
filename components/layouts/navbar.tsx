@@ -87,8 +87,8 @@ export function ProfileDropdown({ imageUrl = "" }: { imageUrl: string }) {
 export default function Navbar({ session, role, roleEnabled = true }: { session?: any, role: string, roleEnabled?: boolean }) {
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/about" },
-        { name: "Contact Us", href: "/contact-us" },
+        { name: "About", href: "https://github.com/ayushsingh-ayushsingh/QuickCourt" },
+        { name: "Contact Us", href: "mailto:ayushpno@gmail.com" },
     ];
 
     const [isVisible, setIsVisible] = useState(true);
