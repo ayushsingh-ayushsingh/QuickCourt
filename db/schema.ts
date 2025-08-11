@@ -19,6 +19,7 @@ export const user = pgTable("user", {
   updatedAt: timestamp("updated_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),
+  role: text("role").notNull().default("user"),
 });
 
 export const session = pgTable("session", {
@@ -65,4 +66,4 @@ export const verification = pgTable("verification", {
   ),
 });
 
-export const schema = {user, session, account, verification};
+export const schema = { user, session, account, verification };

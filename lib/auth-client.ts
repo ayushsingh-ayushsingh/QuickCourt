@@ -9,7 +9,7 @@ const authClientGithub = createAuthClient()
 export const signInWithGithub = async () => {
     await authClientGithub.signIn.social({
         provider: "github",
-        callbackURL: "/dashboard"
+        callbackURL: "/"
     })
 }
 
@@ -17,6 +17,6 @@ const authClientGoogle = createAuthClient()
 export const signInWithGoogle = async () => {
     await authClientGoogle.signIn.social({
         provider: "google",
-        callbackURL: "/dashboard"
+        callbackURL: "/"
     })
 }

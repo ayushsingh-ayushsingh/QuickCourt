@@ -1,44 +1,18 @@
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import NavbarWrapper from "@/components/layouts/navbar-wrapper";
+import Footer from "@/components/layouts/footer";
+import Main from "@/components/layouts/main";
 
-export default function Home() {
-  const navLinks = [
-    {
-      name: "Login",
-      href: "/login",
-    },
-    {
-      name: "Home",
-      href: "/",
-    },
-    {
-      name: "About",
-      href: "/about",
-    },
-    {
-      name: "Contact Us",
-      href: "/contact-us",
-    },
-  ]
-
+export default async function Home() {
   return (
-    <div className="max-w-7xl mx-auto">
-      <nav className="flex justify-between">
-        <Button asChild variant={"link"}>
-          <Link href={"/"} >QuickCourt</Link>
-        </Button>
-        <ul className="flex gap-0">
-          {
-            navLinks.map((item, index) => (
-              <li key={index}>
-                <Button asChild variant={"link"}>
-                  <Link href={item.href}>{item.name}</Link>
-                </Button>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
+    <div className="w-full">
+      <div className="max-w-7xl mx-auto">
+        <NavbarWrapper />
+      </div>
+      <div className="border-b w-full" />
+      <div className="max-w-7xl mx-auto">
+        <Main />
+        <Footer />
+      </div>
     </div>
   );
 }

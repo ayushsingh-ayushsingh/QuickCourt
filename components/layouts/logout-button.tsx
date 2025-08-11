@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { redirect, useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { toast } from "sonner"
 import { Button } from '@/components/ui/button';
 import { LogOut } from 'lucide-react';
@@ -47,8 +47,8 @@ export default function LogoutButton() {
         setIsLoading(false);
     }
     return (
-        <Button onClick={onLogoutClick} disabled={isLoading}>
-            {isLoading ? "Logging out..." : "Logout"}<LogOut className='size-4' />
+        <Button onClick={onLogoutClick} disabled={isLoading} className='w-full text-white'>
+            {isLoading ? "Logging out..." : "Logout"}<LogOut className='size-4 text-white' />
         </Button>
     )
 }

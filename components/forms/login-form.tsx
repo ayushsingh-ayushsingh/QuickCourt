@@ -50,7 +50,7 @@ export function LoginForm({
     const { success, message } = await signIn(values.email, values.password);
     if (success) {
       toast.success(message as string || "Login successful!");
-      router.push("/dashboard");
+      router.push("/");
     } else {
       toast.error(message as string + " Try Google/Github" || "Login failed. Please try again.");
       form.reset();
