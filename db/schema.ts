@@ -19,6 +19,7 @@ export const user = pgTable("user", {
   emailVerified: boolean("email_verified").default(false).notNull(),
   image: text("image"),
   role: text("role").notNull().default("user"),
+  isBanned: boolean("is_banned").default(false).notNull(),
   pendingRole: varchar("pending_role"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
   updatedAt: timestamp("updated_at").defaultNow().notNull(),
@@ -92,6 +93,7 @@ export const venue = pgTable("venue", {
   isApproved: boolean("is_approved").default(false).notNull(),
   ratingAvg: numeric("rating_avg"),
   ratingCount: integer("rating_count").default(0).notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
 export const venue_sport = pgTable("venue_sport", {

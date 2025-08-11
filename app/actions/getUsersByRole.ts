@@ -2,11 +2,30 @@
 
 import { db } from "@/db/drizzle";
 import { user } from "@/db/schema";
-import { eq } from "drizzle-orm";
+import { and, eq, ilike, or } from "drizzle-orm";
 
-export async function getUsersByRole(role: string) {
-    if (role === "all") {
-        return await db.select().from(user);
+export async function getUsersByRole(role: string, status: string, search: string) {
+    let conditions: any[] = [];
+
+    if (role !== "all") {
+        conditions.push(eq(user.role, role));
     }
-    return await db.select().from(user).where(eq(user.role, role));
+
+    if (status === "verified") {
+        conditions.push(eq(user.emailVerified, true));
+    } else if (status === "not_verified") {
+        conditions.push(eq(user.emailVerified, false));
+    }
+
+    if (search && search.trim() !== "") {
+        const pattern = `%${search}%`;
+        conditions.push(
+            or(
+                ilike(user.name, pattern),
+                ilike(user.email, pattern)
+            )
+        );
+    }
+
+    return await db.select().from(user).where(conditions.length ? and(...conditions) : undefined);
 }

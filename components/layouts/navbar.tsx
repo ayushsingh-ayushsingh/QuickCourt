@@ -111,8 +111,7 @@ export default function Navbar({ session, role, roleEnabled = true }: { session?
 
     return (
         <nav
-            className={`w-full border-b px-4 py-3 flex items-center justify-between bg-background sticky top-0 transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
-                }`}
+            className={`w-full border-b px-4 py-3 flex items-center justify-between bg-background sticky top-0 transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         >
             <Link href="/" className="text-2xl font-bold text-foreground">
                 Quick<span className="text-primary">Court</span>
