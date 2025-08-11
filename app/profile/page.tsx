@@ -1,4 +1,4 @@
-import Navbar from "@/components/layouts/navbar"
+import NavbarWrapper from "@/components/layouts/navbar-wrapper"
 import Image from "next/image"
 import { headers } from "next/headers"
 import { auth } from "@/lib/auth"
@@ -182,7 +182,7 @@ function ProfileSidebar({
                             </Link>
                         </li>
                         <li>
-                            <Link href="/profile/all-bookings">
+                            <Link href="/profile">
                                 <Button className="w-full" variant="outline">
                                     All Bookings
                                 </Button>
@@ -203,7 +203,7 @@ export default async function ProfilePage() {
     return (
         <div className="w-full min-h-screen bg-background">
             <div className="max-w-7xl mx-auto">
-                <Navbar />
+                <NavbarWrapper />
             </div>
             <div className="border-b w-full" />
             <div className="max-w-7xl mx-auto px-4 py-6">

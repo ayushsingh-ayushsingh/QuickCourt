@@ -83,20 +83,23 @@ export function PopularVenues() {
 
 export function Hero() {
     return (
-        <section className="py-8 lg:py-16">
+        <section className="py-8">
             <div className="max-w-7xl mx-auto px-4 grid gap-8 lg:grid-cols-2 items-center">
                 {/* Left column - text */}
-                <div className="flex items-center">
+                <div className="flex items-center ml-4">
                     <div>
                         <div className="flex gap-2 items-center text-sm text-muted-foreground">
                             <MapPin className="w-4 h-4" />Ahmedabad, Gujarat
                         </div>
 
                         <div className="mt-2">
-                            <TypingAnimation>QuickCourt</TypingAnimation>
-                            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mt-4 leading-tight">
+                            <div className="text-2xl text-primary sm:text-3xl md:text-4xl mt-4 leading-tight">
+                                Welcome to,
+                            </div>
+                            <TypingAnimation>QuickCourt...</TypingAnimation>
+                            <div className="text-2xl sm:text-3xl md:text-4xl mt-4 leading-tight">
                                 Find Venues and <br />Players Nearby
-                            </h1>
+                            </div>
                             <p className="max-w-md mt-4 text-base">
                                 Seamlessly explore sports venues and play with sports enthusiasts just like you.
                             </p>
