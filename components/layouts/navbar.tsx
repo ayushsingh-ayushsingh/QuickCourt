@@ -84,7 +84,7 @@ export function ProfileDropdown({ imageUrl = "" }: { imageUrl: string }) {
     );
 }
 
-export default function Navbar({ session }: { session?: any }) {
+export default function Navbar({ session, role, roleEnabled = true }: { session?: any, role: string, roleEnabled?: boolean }) {
     const navLinks = [
         { name: "Home", href: "/" },
         { name: "About", href: "/about" },
@@ -111,7 +111,7 @@ export default function Navbar({ session }: { session?: any }) {
 
     return (
         <nav
-            className={`w-full px-4 py-3 flex items-center justify-between bg-background sticky top-0 transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
+            className={`w-full border-b px-4 py-3 flex items-center justify-between bg-background sticky top-0 transition-transform duration-300 z-50 ${isVisible ? "translate-y-0" : "-translate-y-full"
                 }`}
         >
             <Link href="/" className="text-2xl font-bold text-foreground">
@@ -129,6 +129,18 @@ export default function Navbar({ session }: { session?: any }) {
             </ul>
 
             <div className="flex items-center gap-2">
+                {
+                    role === "admin" && roleEnabled &&
+                    <Button asChild>
+                        <Link href="/dashboard/admin">Admin Dash...</Link>
+                    </Button>
+                }
+                {
+                    role === "owner" && roleEnabled &&
+                    <Button asChild>
+                        <Link href="/dashboard/owner">Owner Dash...</Link>
+                    </Button>
+                }
                 {session ? (
                     <ProfileDropdown imageUrl={session.user?.image as string} />
                 ) : (

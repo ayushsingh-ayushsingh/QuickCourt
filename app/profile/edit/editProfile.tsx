@@ -2,10 +2,10 @@
 
 import { useState } from "react"
 import { useRouter } from "next/navigation"
-import { updateProfileAction } from "@/app/actions/updateProfileAction"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { toast } from "sonner"
 import {
     Select,
     SelectContent,
@@ -13,6 +13,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
+import { updateProfileAction } from "@/app/actions/updateProfileAction"
 
 export default function EditProfilePage({
     userEmail = "user@example.com",
@@ -50,8 +51,15 @@ export default function EditProfilePage({
         formData.append("role", role)
         formData.append("image", imageBase64)
 
-        await updateProfileAction(formData)
-        router.push("/profile")
+        const result = await updateProfileAction(formData);
+
+        if (result.message) {
+            toast.info(result.message);
+        } else {
+            toast.success("Profile Updated");
+        }
+
+        router.push("/profile");
     }
 
     return (
@@ -60,7 +68,7 @@ export default function EditProfilePage({
             <form onSubmit={handleSubmit} className="space-y-6">
                 {/* Name */}
                 <div>
-                    <Label className="mb-2"  htmlFor="name">Name</Label>
+                    <Label className="mb-2" htmlFor="name">Name</Label>
                     <Input
                         id="name"
                         value={name}
@@ -70,13 +78,13 @@ export default function EditProfilePage({
 
                 {/* Role Select */}
                 <div>
-                    <Label className="mb-2"  htmlFor="role">Role</Label>
+                    <Label className="mb-2" htmlFor="role">Role</Label>
                     <Select value={role} onValueChange={setRole}>
                         <SelectTrigger id="role" className="w-full">
                             <SelectValue placeholder="Select role" />
                         </SelectTrigger>
                         <SelectContent>
-                            <SelectItem value="owner">Owner</SelectItem>
+                            <SelectItem value="owner">Facility Owner</SelectItem>
                             <SelectItem value="user">User</SelectItem>
                             <SelectItem value="admin">Admin</SelectItem>
                         </SelectContent>
@@ -85,7 +93,7 @@ export default function EditProfilePage({
 
                 {/* Image Upload */}
                 <div>
-                    <Label className="mb-2"  htmlFor="image">Profile Image</Label>
+                    <Label className="mb-2" htmlFor="image">Profile Image</Label>
                     <Input
                         type="file"
                         id="image"
@@ -107,7 +115,7 @@ export default function EditProfilePage({
 
                 {/* Email (Disabled) */}
                 <div>
-                    <Label className="mb-2"  htmlFor="email">Email</Label>
+                    <Label className="mb-2" htmlFor="email">Email</Label>
                     <Input
                         id="email"
                         value={userEmail}
