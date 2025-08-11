@@ -131,13 +131,13 @@ export default function Navbar({ session, role, roleEnabled = true }: { session?
                 {
                     role === "admin" && roleEnabled &&
                     <Button asChild>
-                        <Link href="/dashboard/admin">Admin Dash...</Link>
+                        <Link href="/dashboard/admin">Admin</Link>
                     </Button>
                 }
                 {
                     role === "owner" && roleEnabled &&
                     <Button asChild>
-                        <Link href="/dashboard/owner">Owner Dash...</Link>
+                        <Link href="/dashboard/owner">Owner</Link>
                     </Button>
                 }
                 {session ? (

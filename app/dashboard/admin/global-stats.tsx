@@ -31,21 +31,21 @@ export default function GlobalStats() {
         <div className="space-y-4 m-4 my-8">
             <div className="text-2xl">Global Statistics</div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-accent rounded p-4 text-center shadow">
+                <div className="bg-card rounded p-4 text-center shadow">
                     <p className="text-xl font-bold">{loading ? "..." : stats.totalUsers}</p>
-                    <p className="text-gray-600">Total Users</p>
+                    <p className="text-gray-500">Total Users</p>
                 </div>
-                <div className="bg-accent rounded p-4 text-center shadow">
+                <div className="bg-card rounded p-4 text-center shadow">
                     <p className="text-xl font-bold">{loading ? "..." : stats.totalFacilities}</p>
-                    <p className="text-gray-600">Total Facilities</p>
+                    <p className="text-gray-500">Total Facilities</p>
                 </div>
-                <div className="bg-accent rounded p-4 text-center shadow">
+                <div className="bg-card rounded p-4 text-center shadow">
                     <p className="text-xl font-bold">{loading ? "..." : stats.totalBookings}</p>
-                    <p className="text-gray-600">Total Bookings</p>
+                    <p className="text-gray-500">Total Bookings</p>
                 </div>
-                <div className="bg-accent rounded p-4 text-center shadow">
+                <div className="bg-card rounded p-4 text-center shadow">
                     <p className="text-xl font-bold">{loading ? "..." : stats.activeCourts}</p>
-                    <p className="text-gray-600">Active Courts</p>
+                    <p className="text-gray-500">Active Courts</p>
                 </div>
             </div>
         </div>

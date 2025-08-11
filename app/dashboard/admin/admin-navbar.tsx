@@ -29,6 +29,13 @@ export default function AdminNavbar() {
                         </Link>
                     </Button>
                 </li>
+                <li>
+                    <Button>
+                        <Link href={"/dashboard/admin/facility-details"}>
+                            Facility Details
+                        </Link>
+                    </Button>
+                </li>
             </ul>
         </div>
     )
