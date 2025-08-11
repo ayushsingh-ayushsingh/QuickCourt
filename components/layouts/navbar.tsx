@@ -73,7 +73,7 @@ export function ProfileDropdown({ imageUrl = "" }: { imageUrl: string }) {
                 )}
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56" align="end">
-                <Link href="/profile">
+                <Link href="/profile/edit">
                     <DropdownMenuItem>Profile</DropdownMenuItem>
                 </Link>
                 <DropdownMenuItem>

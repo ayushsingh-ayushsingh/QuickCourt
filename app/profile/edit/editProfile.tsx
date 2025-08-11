@@ -59,7 +59,7 @@ export default function EditProfilePage({
             toast.success("Profile Updated");
         }
 
-        router.push("/profile");
+        router.push("/profile/edit");
     }
 
     return (
