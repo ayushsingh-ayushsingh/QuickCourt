@@ -5,6 +5,8 @@ Whether you’re looking to book a badminton court, a turf ground, or a table te
 
 ## YouTube Demo: https://youtu.be/4taAAvy53TE
 
+[![Watch the video](./public/OdooHackathonLoginPage.png)](https://youtu.be/4taAAvy53TE)
+
 ## Problem Statement
 Booking local sports facilities often involves manual processes, unclear availability, and lack of streamlined communication between players and venue owners.  
 QuickCourt solves this by providing:
@@ -40,13 +42,6 @@ QuickCourt supports three roles, each with tailored features:
 - Manage users and facility owners.
 - Oversee platform-wide booking trends and statistics.
 - Acts as a super-user with all the rights.
-
----
-
-### Login page (ShadCN/UI)
-Example image showing Dark and Light mode in one
-
-![Login Page](./public/OdooHackathonLoginPage.png)
 
 ---
 
