@@ -10,6 +10,15 @@ QuickCourt solves this by providing:
 - **Accurate real-time availability** of courts.
 - **Community engagement** through matches and reviews.
 
+---
+
+### Performance, Accessibility, Best Bractices and SEO Test
+Test with Lighthouse
+
+![Lighthouse Test](./public/Lighthouse.png)
+
+---
+
 ## Roles Overview
 QuickCourt supports three roles, each with tailored features:
 
