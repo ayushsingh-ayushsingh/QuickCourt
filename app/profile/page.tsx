@@ -8,16 +8,14 @@ import { User2 } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-// MODIFIED: Import the new function
 import { getEveryBooking } from "@/app/actions/booking-actions"
 import { BookingList } from "./booking-list"
 
-// ProfileSidebar remains the same...
 function ProfileSidebar({ imageUrl, email, userType = "Player", name }: {
     imageUrl: string; email: string; userType?: string; name: string;
 }) {
     return (
-        <Card className="w-full h-fit sticky top-24">
+        <Card className="w-full h-fit top-24">
             <CardContent className="p-6 flex flex-col items-center gap-6">
                 <div className="relative w-48 h-48 rounded-full overflow-hidden shrink-0">
                     {imageUrl ? (
@@ -68,7 +66,6 @@ export default async function ProfilePage() {
     return (
         <div className="w-full min-h-screen bg-background">
             <div className="max-w-7xl mx-auto"><NavbarWrapper /></div>
-            <div className="border-b w-full" />
             <div className="max-w-7xl mx-auto px-4 py-6">
                 <div className="flex flex-col lg:flex-row gap-6">
                     <div className="lg:w-1/3">

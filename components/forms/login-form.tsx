@@ -96,7 +96,7 @@ export function LoginForm({
                     return (
                       <FormItem>
                         <div className="flex items-center">
-                          <FormLabel>Create Password</FormLabel>
+                          <FormLabel>Password</FormLabel>
                           <Link
                             href="forgot-password"
                             className="ml-auto inline-block text-sm underline-offset-4 hover:underline"

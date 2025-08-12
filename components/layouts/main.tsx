@@ -192,7 +192,7 @@ export default function Main() {
                         Popular Venues:
                     </span>
                     <span className="text-xl font-medium hover:underline">
-                        <Link href="/find-venues">
+                        <Link href="/venues">
                             All Venues
                         </Link>
                     </span>
@@ -205,7 +205,7 @@ export default function Main() {
                         Popular Sports:
                     </span>
                     <span className="text-xl font-medium hover:underline">
-                        <Link href="/find-venues">
+                        <Link href="/venues">
                             Find More
                         </Link>
                     </span>
